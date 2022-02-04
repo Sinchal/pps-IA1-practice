@@ -1,0 +1,60 @@
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x90b: file p6original.c, line 39.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p6original.c:39
+39  {
+(gdb) n
+41   input_two_string(a, b);
+(gdb) s
+input_two_string (a=0x7fffa3b4a790 "\a\267\230\315~\177", b=0x7fffa3b4a800 "")
+    at p9final.c:5
+5    printf("enter the strings\n");
+(gdb) n
+enter the strings
+6    scanf("%s%s", a, b);
+(gdb) n
+java
+program
+7   }
+(gdb) n
+main () at p6original.c:42
+42   int result = strcmp(a, b);
+(gdb) s
+strcmp (a=0x7fffa3b4a790 "java", b=0x7fffa3b4a800 "program") at p9final.c:11
+11   for (int i = 0; a[i] != '\0' && b[i] != '\0'; i++)
+(gdb) n
+13    if (a[i] > b[i])
+(gdb) n
+17    if (a[i] < b[i])
+(gdb) n
+19     return -1;
+(gdb) n
+26  }
+(gdb) n
+main () at p6original.c:43
+43   output(a, b, result);
+(gdb) s
+output (a=0x7fffa3b4a790 "java", b=0x7fffa3b4a800 "program", result=-1)
+    at p9final.c:30
+30   if (result == 1)
+(gdb) n
+32   if (result == -1)
+(gdb) n
+33   printf("%s is greater than %s", b, a);
+(gdb) n
+34   if (result == 0)
+(gdb) n
+36  }
+(gdb) n
+main () at p6original.c:44
+44   return 0;
+(gdb) n
+45  } 
+(gdb) c
+Continuing.
+program is greater than java[Inferior 1 (process 591) exited normally]
+(gdb) quit 
