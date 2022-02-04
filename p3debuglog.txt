@@ -1,0 +1,94 @@
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x90c: file p7original.c, line 38.
+(gdb) r
+Starting program: /home/runner/pps-test1-Sinchal-23/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p7original.c:38
+38  {
+(gdb) n
+40    n=input();
+(gdb) s
+input () at p7original.c:3
+3   {
+(gdb) n
+5   printf("Enter a number\n");
+(gdb) n
+Enter a number
+6   scanf("%d", &a);
+(gdb) n
+2
+7   return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p7original.c:41
+41    int a[n];
+(gdb) n
+42    input_array(n,a);
+(gdb) s
+input_array (n=2, a=0x7fffc93e1030) at p7original.c:11
+11    for(int i=0;i<n;i++)
+(gdb) n
+13      printf("Enter the element no %d of the array\n",i);
+(gdb) n
+Enter the element no 0 of the array
+14      scanf("%d",&a[i]);
+(gdb) n
+6
+11    for(int i=0;i<n;i++)
+(gdb) n
+13      printf("Enter the element no %d of the array\n",i);
+(gdb) n
+Enter the element no 1 of the array
+14      scanf("%d",&a[i]);
+(gdb) n
+3
+11    for(int i=0;i<n;i++)
+(gdb) n
+16  }
+(gdb) n
+main () at p7original.c:43
+43    sum=array_sum(n,a);
+(gdb) s
+array_sum (n=2, a=0x7fffc93e1030) at p7original.c:20
+20    int sum=0;
+(gdb) n
+21    for(int i=0;i<n;i++)
+(gdb) n
+23      sum += a[i];
+(gdb) n
+21    for(int i=0;i<n;i++)
+(gdb) n
+23      sum += a[i];
+(gdb) n
+21    for(int i=0;i<n;i++)
+(gdb) n
+25    return sum;
+(gdb) n
+26  }
+(gdb) n
+main () at p7original.c:44
+44    output(n,a,sum);
+(gdb) s
+output (n=2, a=0x7fffc93e1030, sum=9) at p7original.c:30
+30    printf("The sum of");
+(gdb) n
+31    for(i=0;i<n-1;i++)
+(gdb) n
+33      printf("%d + ",a[i]);
+(gdb) n
+31    for(i=0;i<n-1;i++)
+(gdb) n
+35    printf("%d = %d\n", a[i], sum);
+(gdb) n
+The sum of6 + 3 = 9
+36  }
+(gdb) n
+main () at p7original.c:45
+45  }
+(gdb) c
+Continuing.
+[Inferior 1 (process 96) exited normally]
+(gdb) quit
