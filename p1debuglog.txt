@@ -1,6 +1,6 @@
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x7fc: file p3original.c, line 16.
+Breakpoint 1 at 0x7fc: file p1original.c, line 16.
 (gdb) r
 Starting program: /home/runner/pps-IA1-practice-Sinchal-25/a.out 
 warning: Error disabling address space randomization: Operation not permitted
