@@ -2,7 +2,7 @@ Reading symbols from a.out...done.
 (gdb) b main
 Breakpoint 1 at 0x90c: file p3original.c, line 38.
 (gdb) r
-Starting program: /home/runner/pps-test1-Sinchal-23/a.out 
+Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
 Breakpoint 1, main () at p3original.c:38
