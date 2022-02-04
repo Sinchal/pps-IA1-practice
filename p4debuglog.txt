@@ -1,0 +1,68 @@
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x7d4: file p4original.c, line 25.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4original.c:25
+25  int a = input();
+(gdb) s
+input () at p4original.c:3
+3   {
+(gdb) n
+5   printf("Enter a number");
+(gdb) n
+6   scanf("%d", &n);
+(gdb) n
+Enter a number4
+7   return n;
+(gdb) n
+8   }
+(gdb) n
+main () at p4original.c:26
+26  int b = calculate(a);
+(gdb) s
+calculate (n=4) at p4original.c:11
+11  int i, sum = 0;
+(gdb) n
+12  for (i = 1; i <=n; ++i)
+(gdb) n
+14  sum += i;
+(gdb) n
+12  for (i = 1; i <=n; ++i)
+(gdb) n
+14  sum += i;
+(gdb) n
+12  for (i = 1; i <=n; ++i)
+(gdb) n
+14  sum += i;
+(gdb) n
+12  for (i = 1; i <=n; ++i)
+(gdb) n
+14  sum += i;
+(gdb) n
+12  for (i = 1; i <=n; ++i)
+(gdb) n
+16  return sum;
+(gdb) n
+17  }
+(gdb) n
+main () at p4original.c:27
+27  output(a, b);
+(gdb) s
+output (n=4, sum=10) at p4original.c:20
+20  printf("Sum = %d", sum);
+(gdb) n
+21  return 0;
+(gdb) n
+22  }
+(gdb) n
+main () at p4original.c:28
+28    return 0;
+(gdb) n
+29  }
+(gdb) c
+Continuing.
+Sum = 10[Inferior 1 (process 133) exited normally]
+(gdb) quit
