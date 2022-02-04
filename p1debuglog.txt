@@ -1,0 +1,47 @@
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x7fc: file p3original.c, line 16.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice-Sinchal-25/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p1original.c:16
+16  {
+(gdb) n
+18  input(&x, &y);
+(gdb) s
+input (a=0x7ffc77de752c, b=0x7ffc77de7530) at p1original.c:4
+4   printf("Enter two numbers\n");
+(gdb) n
+Enter two numbers
+5   scanf("%d%d",a ,b);
+(gdb) n
+5
+8
+6   }
+(gdb) n
+main () at p1original.c:19
+19  add(x,y,&z);
+(gdb) s
+add (a=5, b=8, sum=0x7ffc77de7534) at p1original.c:9
+9   *sum= a+b;
+(gdb) n
+10  }
+(gdb) n
+main () at p1original.c:20
+20  output(x,y,z);
+(gdb) s
+output (a=5, b=8, c=13) at p1original.c:13
+13  printf("%d + %d is %d \n", a, b, c);
+(gdb) n
+5 + 8 is 13 
+14  }
+(gdb) n
+main () at p1original.c:21
+21  return 0;
+(gdb) n
+22  }
+(gdb) c
+Continuing.
+[Inferior 1 (process 81) exited normally]
+(gdb) quit
